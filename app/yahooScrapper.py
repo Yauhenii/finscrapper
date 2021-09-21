@@ -1,5 +1,10 @@
+from re import I
 from urllib.parse import urljoin
+import logging
 import requests
+from app import settings
+
+logger = logging.getLogger(settings.logging.NAME)
 
 
 class YahooScrapper:
@@ -18,4 +23,5 @@ class YahooScrapper:
         path = self.path_template.format(name, module)
         url = urljoin(self.host, path)
         response = requests.get(url, headers=self.headers)
+        logger.debug(f'Response code: {response.status_code}')
         return response
