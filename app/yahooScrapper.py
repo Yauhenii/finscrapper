@@ -9,7 +9,7 @@ class YahooScrapper:
 
     def __init__(self, host: str, path_template: str, user_agent: str) -> None:
         self.host = host
-        self.path = path_template
+        self.path_template = path_template
         self.headers = {
             'user-agent': user_agent,
         }
