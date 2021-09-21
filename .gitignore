@@ -133,3 +133,6 @@ dmypy.json
 
 # Playground
 playground.py
+
+# Ignore dynaconf secret files
+.secrets.*
