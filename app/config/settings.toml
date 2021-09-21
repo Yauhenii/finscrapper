@@ -1,0 +1,6 @@
+[default]
+    # TEST = 'LOL'
+    [default.yahooscrapper]
+        HOST = 'https://query1.finance.yahoo.com/'
+        PATH_TEMPLATE = '/v10/finance/quoteSummary/{}?modules={}'
+        USER_AGENT = 'yahoo-agent'
