@@ -25,4 +25,3 @@
     [default.logging]
         LEVEL = 'DEBUG'
         NAME = 'finscrapper'
-    
