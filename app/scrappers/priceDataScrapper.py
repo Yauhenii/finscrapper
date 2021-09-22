@@ -33,7 +33,7 @@ class PriceDataScrapper(BasicScrapper):
         self._events_str = settings.yahooscrapper.price.EVENTS
         self._template_str = settings.yahooscrapper.TEMPLATE
 
-    def get_price_data(self,
+    def get_data(self,
                        ticker: str,
                        period1: str = None,
                        period2: str = None,
