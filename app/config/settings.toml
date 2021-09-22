@@ -1,9 +1,28 @@
 [default]
-    # TEST = 'LOL'
     [default.yahooscrapper]
-        HOST = 'https://query1.finance.yahoo.com/'
-        PATH_TEMPLATE = '/v10/finance/quoteSummary/{}?modules={}'
+        TEMPLATE='{schema}{prefix}{host}{version}{path}'
+        SCHEMA='https://'
+        HOST='finance.yahoo.com/'
         USER_AGENT = 'yahoo-agent'
+        [default.yahooscrapper.fundata]
+            PREFIX='query2.'
+            VERSION='v10/'
+            PATH='finance/quoteSummary/{ticker}?modules={modules}'
+        [default.yahooscrapper.optcontracts]
+            PREFIX='query2.'
+            VERSION='v7/'
+            PATH='finance/options/{ticker}'
+        [default.yahooscrapper.price]
+            PREFIX='query1.'
+            VERSION='v8/'
+            PATH='finance/chart/{ticker}?{parameters}'
+            SYMBOL='symbol={symbol}'
+            PERIOD1='period1={period1}'
+            PERIOD2='period2={period2}'
+            INTERVAL='interval={interval}'
+            PREPOST='includePrePost={includePrePost}'
+            EVENTS='events={events}'
     [default.logging]
         LEVEL = 'DEBUG'
         NAME = 'finscrapper'
+    
